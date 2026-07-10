@@ -23,8 +23,12 @@ class View(ft.UserControl):
         self._title = ft.Text("Esame del 12/01/2026", color="blue", size=24)
         self._page.controls.append(self._title)
 
+        # PUNTO 1 ----------------------------------------------------------
         self._ddAnno1 = ft.Dropdown(label="Da", hint_text="Anno")
         self._ddAnno2 = ft.Dropdown(label="A", hint_text="Anno")
+        self._controller.fillDDYear()
+        # FINE PUNTO 1 ------------------------------------------------------
+
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handleCreaGrafo)
 
         cont1 = ft.Container(self._ddAnno1, width=250)
